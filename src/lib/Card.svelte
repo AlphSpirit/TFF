@@ -1,35 +1,40 @@
 <script lang="ts">
 	import type ICard from "./ICard";
 
-	// const body = "Your {k:Attacks} with {k:Repeat} have +1 {k:Damage} on their final {k:Attack}.//{f:One must become the predator before the Catacombs make them its prey.}";
-	// const body = "Vos {k:Attaques} avec {k:Répétition} ont +1 {k:Dommage} sur leur dernière {k:Attaque}.//{f:L'un doit devenir le prédateur avant que les Catacombes ne fassent d'eux leur proie.}";
 	export let card: ICard;
 
 	function formatBody(body: string) {
 		let lines = body.split("//");
 		lines = lines.map((line) => {
 			line = line.replace("/", "<br />");
-			line = line.replace(/{c}/g, (_, p1) => `▮`);
+			line = line.replace(/{C}/g, (_, p1) => "C");
+			line = line.replace(/{MP}/g, (_, p1) => "MP");
+			// Keyword
 			line = line.replace(
 				/{k:(.*?)}/g,
 				(_, p1) => `<span class="keyword">${p1}</span>`,
 			);
+			// Flavour
 			line = line.replace(
 				/{f:(.*?)}/g,
 				(_, p1) => `<span class="flavor">${p1}</span>`,
 			);
+			// Helper text
 			line = line.replace(
 				/{h:(.*?)}/g,
 				(_, p1) => `<span class="helper">(${p1})</span>`,
 			);
+			// Trigger
 			line = line.replace(
 				/{t:(.*?)}/g,
 				(_, p1) => `<span class="trigger">${p1}</span>`,
 			);
+			// Cost
 			line = line.replace(
-				/{c:(.*?)}/g,
+				/{\$:(.*?)}/g,
 				(_, p1) => `<span class="cost">${p1}</span>`,
 			);
+			// Attack pattern
 			line = line.replace(
 				/{p:(.*?)}/g,
 				(_, p1) => `<img src="/patterns/${p1}.svg" alt="${p1}" />`,
@@ -123,10 +128,9 @@
 	}
 	.cardTitle {
 		color: white;
-		font-family: "Brandon Grotesque", sans-serif;
 		font-weight: bold;
 		position: absolute;
-		top: 3.1mm;
+		top: 3.7mm;
 		left: 4.2mm;
 		font-size: 12px;
 		text-transform: uppercase;
@@ -212,6 +216,7 @@
 			font-style: italic;
 			color: #b0b0b0;
 			display: block;
+			line-height: 1;
 		}
 		:global(.helper) {
 			font-size: 10px;
@@ -290,10 +295,9 @@
 	}
 	.cardType {
 		color: white;
-		font-family: "Brandon Grotesque", sans-serif;
 		font-weight: bold;
 		position: absolute;
-		bottom: 7mm;
+		bottom: 7.6mm;
 		right: 4.2mm;
 		font-size: 12px;
 		text-transform: uppercase;

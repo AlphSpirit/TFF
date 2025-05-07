@@ -81,6 +81,7 @@ export function applyPrinting(card: ICard, printing: any) {
 	printing.frameclass = card.frameclass;
 	printing.value = card.value;
 	printing.type = card.type;
+	printing.printings = card.printings;
 
 	// Return the updated card
 	return printing;

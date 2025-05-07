@@ -3,7 +3,6 @@ import { error, json } from '@sveltejs/kit';
 
 export async function GET({ params }) {
 	let result = await sql`select * from cards where id = ${params.id}`;
-	console.log(result);
 	if (result.length === 0) {
 		return error(404);
 	}

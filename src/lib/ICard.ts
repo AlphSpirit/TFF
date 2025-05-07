@@ -1,5 +1,6 @@
 export default interface ICard {
 	id: number | null;
+	card_id: number | null;
 	name: string;
 	version: number | null;
 	class: string | null;
@@ -7,7 +8,7 @@ export default interface ICard {
 	value: number | null;
 	type: string;
 	body: string | null;
-	rarity: string | null;
+	rarity: string;
 	set: string | null;
 	setnumber: number | null;
 	art: string | null;
