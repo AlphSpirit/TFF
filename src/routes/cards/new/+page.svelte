@@ -13,7 +13,7 @@
 		body: "",
 		rarity: "T",
 		set: "FRB",
-		setnumber: null,
+		setnumber: 1,
 		art: "",
 		artist: "",
 		foil: "N",

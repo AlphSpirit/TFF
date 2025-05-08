@@ -9,6 +9,7 @@
 			line = line.replace("/", "<br />");
 			line = line.replace(/{C}/g, (_, p1) => "C");
 			line = line.replace(/{MP}/g, (_, p1) => "MP");
+			line = line.replace(/{HP}/g, (_, p1) => "HP");
 			// Keyword
 			line = line.replace(
 				/{k:(.*?)}/g,
@@ -76,7 +77,14 @@
 			card.frameclass,
 		)}@2x.png')"
 	></div>
-	<div class="cardTitle">{card.name} {#if card.version}<span class="cardVersion v{card.version}">v{card.version}</span>{/if}</div>
+	<div class="cardTitle">
+		{card.name}
+		{#if card.version}
+			<span class="cardVersion v{card.version}">
+				v{card.version}
+			</span>
+		{/if}
+	</div>
 	<div class="classIcon">
 		<img src="/IMG_Icon-{getClassIcon(card.class)}@2x.png" alt="Generic" />
 	</div>
@@ -338,7 +346,7 @@
 				background-color: #990;
 			}
 			&.E {
-				background-color: #8A5FDB;
+				background-color: #8a5fdb;
 			}
 		}
 		.set {

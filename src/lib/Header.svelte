@@ -44,6 +44,7 @@
 		left: 0;
 		right: 0;
 		backdrop-filter: blur(25px);
+		z-index: 1;
 		.container {
 			height: 5rem;
 			display: flex;
