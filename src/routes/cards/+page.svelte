@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
 	import Card from "$lib/Card.svelte";
-	import { applyPrinting } from "$lib/utilities";
+	import { applyPrinting } from "$lib/Utilities";
 
 	let props = $props();
 	let cards = props.data.cards;

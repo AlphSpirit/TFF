@@ -1,4 +1,4 @@
-import sql from '$lib/db.js';
+import sql from '$lib/DB.js';
 import { error, json } from '@sveltejs/kit';
 
 export async function GET({ params }) {

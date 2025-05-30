@@ -1,4 +1,4 @@
-import sql from '$lib/db';
+import sql from '$lib/DB';
 
 export async function POST({ request }) {
 	const body = await request.json();

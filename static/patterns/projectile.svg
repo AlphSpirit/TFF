@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
-<svg width="100mm" height="100mm" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
- <path d="m0 0v100h100v-100zm9.9999 9.9999h80v80h-80z" fill="#3abeff"/>
- <path d="m10 10h80v80h-80z" fill="#3abeff" fill-opacity=".5" stroke-linecap="square"/>
- <path d="m20 45h35v-20l25 25-25 25v-20h-35z" fill="#fff" stroke-linecap="square"/>
+<svg width="3mm" height="3mm" version="1.1" viewBox="0 0 3 3" xmlns="http://www.w3.org/2000/svg">
+ <g transform="scale(.03)">
+  <path d="m0 0v100h100v-100zm9.9999 9.9999h80v80h-80z" fill="#3abeff"/>
+  <path d="m10 10h80v80h-80z" fill="#3abeff" fill-opacity=".5" stroke-linecap="square"/>
+  <path d="m20 45h35v-20l25 25-25 25v-20h-35z" fill="#fff" stroke-linecap="square"/>
+ </g>
 </svg>

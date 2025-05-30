@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Card from "$lib/Card.svelte";
 	import type ICard from "$lib/ICard";
 
 	let card: ICard = {
@@ -59,7 +58,8 @@
 			height: 100%;
 			position: relative;
 		}
-		.leftArrow, .rightArrow {
+		.leftArrow,
+		.rightArrow {
 			position: absolute;
 			top: 50%;
 			cursor: pointer;
@@ -85,7 +85,7 @@
 			flex-direction: column;
 		}
 		.label {
-			color: #D900B6;
+			color: #d900b6;
 			margin-bottom: 8px;
 			display: flex;
 			align-items: center;

@@ -7,9 +7,18 @@
 		let lines = body.split("//");
 		lines = lines.map((line) => {
 			line = line.replace("/", "<br />");
-			line = line.replace(/{C}/g, (_, p1) => "C");
-			line = line.replace(/{MP}/g, (_, p1) => "MP");
-			line = line.replace(/{HP}/g, (_, p1) => "HP");
+			line = line.replace(
+				/{C}/g,
+				(_, p1) => "<i class='fa-solid fa-sd-card'></i>",
+			);
+			line = line.replace(
+				/{MP}/g,
+				(_, p1) => "<i class='fa-solid fa-person-running'></i>",
+			);
+			line = line.replace(
+				/{HP}/g,
+				(_, p1) => "<i class='fa-solid fa-heart'></i>",
+			);
 			// Keyword
 			line = line.replace(
 				/{k:(.*?)}/g,
@@ -28,12 +37,20 @@
 			// Trigger
 			line = line.replace(
 				/{t:(.*?)}/g,
-				(_, p1) => `<span class="trigger">${p1}</span>`,
+				(_, p1) =>
+					`<span class="trigger"><i class='icon fa-solid fa-bolt'></i>${p1}</span>`,
 			);
 			// Cost
 			line = line.replace(
 				/{\$:(.*?)}/g,
-				(_, p1) => `<span class="cost">${p1}</span>`,
+				(_, p1) =>
+					`<span class="cost"><i class='icon fa-solid fa-dollar-sign'></i>${p1}</span>`,
+			);
+			// Condition
+			line = line.replace(
+				/{\?:(.*?)}/g,
+				(_, p1) =>
+					`<span class="condition"><i class="icon fa-solid fa-question"></i>${p1}</span>`,
 			);
 			// Attack pattern
 			line = line.replace(
@@ -72,10 +89,10 @@
 	></div>
 	<div
 		class="cardFrame"
-		style="background: no-repeat center/cover url('/Neon - Frame {getClassFrame(
+		style="background: no-repeat center/cover url('/frames/{getClassFrame(
 			card.class,
 			card.frameclass,
-		)}@2x.png')"
+		)}.png')"
 	></div>
 	<div class="cardTitle">
 		{card.name}
@@ -86,11 +103,10 @@
 		{/if}
 	</div>
 	<div class="classIcon">
-		<img src="/IMG_Icon-{getClassIcon(card.class)}@2x.png" alt="Generic" />
+		<img src="/icons/{getClassIcon(card.class)}.png" alt="Generic" />
 	</div>
 	{#if card.body}
 		<div class="body">
-			<div class="float"></div>
 			{#each formatBody(card.body) as line}
 				<div class="line {line.indexOf('flavor') > -1 ? 'flavor' : ''}">
 					{@html line}
@@ -162,8 +178,8 @@
 	.classIcon img {
 		height: 16px;
 		position: absolute;
-		left: 54.8mm;
-		top: 8.5mm;
+		left: 56.4mm;
+		top: 6.7mm;
 		transform: translate(-50%, -50%);
 	}
 	.body {
@@ -173,7 +189,7 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
-		padding-bottom: 17mm;
+		padding-bottom: 15mm;
 		padding-left: 6.3mm;
 		padding-right: 6.3mm;
 		text-align: center;
@@ -192,7 +208,7 @@
 			background: linear-gradient(
 				to bottom,
 				transparent 0%,
-				rgba(0, 0, 0, var(--black-opacity)) 100%
+				rgba(0, 0, 0, var(--black-opacity)) 90%
 			);
 			z-index: -1;
 		}
@@ -225,12 +241,29 @@
 			color: #b0b0b0;
 			display: block;
 			line-height: 1;
+			font-family: "Brandon Grotesque", sans-serif;
 		}
 		:global(.helper) {
 			font-size: 10px;
 			font-style: italic;
 			color: #b0b0b0;
-			display: block;
+		}
+		:global(.trigger),
+		:global(.cost),
+		:global(.condition) {
+			:global(.icon) {
+				font-size: 8px;
+				position: relative;
+				top: -1px;
+				margin-right: 1px;
+				opacity: 0.6;
+			}
+			:global(i:not(.icon)) {
+				font-size: 10px;
+			}
+			:global(i:not(.icon) + i:not(.icon)) {
+				margin-left: 2px;
+			}
 		}
 		:global(.trigger) {
 			border-top: 1px solid white;
@@ -285,9 +318,13 @@
 				);
 			}
 		}
+		:global(.condition) {
+			border: 1px solid white;
+			border-radius: 16px;
+			padding: 0 4px;
+		}
 		:global(img) {
 			vertical-align: middle;
-			width: 6px;
 			position: relative;
 			top: -1px;
 		}
@@ -297,8 +334,8 @@
 		font-family: "Brandon Grotesque", sans-serif;
 		position: absolute;
 		font-weight: bold;
-		left: 8.9mm;
-		bottom: 6.4mm;
+		left: 7.1mm;
+		bottom: 4.7mm;
 		transform: translate(-50%, -50%);
 	}
 	.cardType {

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="12mm" height="9mm" version="1.1" viewBox="0 0 12 9" xmlns="http://www.w3.org/2000/svg">
+ <g stroke-width=".03">
+  <path d="m0.0041341 2.9993v3h3v-3zm0.3 0.3h2.4v2.4h-2.4z" fill="#0a0"/>
+  <path d="m0.30413 3.2993h2.4v2.4h-2.4z" fill="#0a0" fill-opacity=".50196" stroke-linecap="square"/>
+  <path d="m1.9541 4.4993a0.45 0.45 0 0 1-0.45 0.45 0.45 0.45 0 0 1-0.45-0.45 0.45 0.45 0 0 1 0.45-0.45 0.45 0.45 0 0 1 0.45 0.45z" fill="#fff" fill-opacity=".94118" stroke-linecap="square"/>
+ </g>
+ <g fill="#808080" stroke-width=".03">
+  <path d="m3.0038 2.9995v3h3v-3zm0.3 0.3h2.4v2.4h-2.4z"/>
+  <path d="m3.3038 3.2995h2.4v2.4h-2.4z" fill-opacity=".50196" stroke-linecap="square"/>
+  <path d="m6.0038 2.9993v3h3v-3zm0.3 0.3h2.4v2.4h-2.4z"/>
+  <path d="m6.3048 3.2993h2.4v2.4h-2.4z" fill-opacity=".50196" stroke-linecap="square"/>
+ </g>
+ <g transform="matrix(.03 0 0 .03 9 2.9993)">
+  <path d="m0 0v100h100v-100zm9.9999 9.9999h80v80h-80z" fill="#f00"/>
+  <path d="m10 10h80v80h-80z" fill="#f00" fill-opacity=".50196" stroke-linecap="square"/>
+  <path d="m25 17.5 25 25 25-25 7.5 7.5-25 25 25 25-7.5 7.5-25-25-25 25-7.5-7.5 25-25-25-25z" fill="#fff" stroke-linecap="square"/>
+ </g>
+ <g transform="matrix(.03 0 0 .03 8.9999 6)">
+  <path d="m0 0v100h100v-100zm9.9999 9.9999h80v80h-80z" fill="#f00"/>
+  <path d="m10 10h80v80h-80z" fill="#f00" fill-opacity=".50196" stroke-linecap="square"/>
+  <path d="m25 17.5 25 25 25-25 7.5 7.5-25 25 25 25-7.5 7.5-25-25-25 25-7.5-7.5 25-25-25-25z" fill="#fff" stroke-linecap="square"/>
+ </g>
+ <g transform="matrix(.03 0 0 .03 9 .0010335)">
+  <path d="m0 0v100h100v-100zm9.9999 9.9999h80v80h-80z" fill="#f00"/>
+  <path d="m10 10h80v80h-80z" fill="#f00" fill-opacity=".50196" stroke-linecap="square"/>
+  <path d="m25 17.5 25 25 25-25 7.5 7.5-25 25 25 25-7.5 7.5-25-25-25 25-7.5-7.5 25-25-25-25z" fill="#fff" stroke-linecap="square"/>
+ </g>
+</svg>

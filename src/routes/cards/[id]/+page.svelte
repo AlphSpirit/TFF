@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Card from "$lib/Card.svelte";
 	import type ICard from "$lib/ICard";
-	import { applyPrinting } from "$lib/utilities";
+	import { applyPrinting } from "$lib/Utilities";
 
 	let props = $props();
 	let card = $state(props.data.card);

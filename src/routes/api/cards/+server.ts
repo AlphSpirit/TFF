@@ -1,6 +1,6 @@
-import sql from '$lib/db.js';
+import sql from '$lib/DB.js';
 import type ICard from '$lib/ICard.js';
-import { orderCards } from '$lib/utilities.js';
+import { orderCards } from '$lib/Utilities.js';
 import { json } from '@sveltejs/kit';
 
 export async function GET() {
