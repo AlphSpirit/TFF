@@ -80,13 +80,13 @@
 	}
 </script>
 
-<div class="card" on:click>
-	<div
-		class="cardArt"
-		style={card.art
-			? `background: no-repeat center/100% url('/art/${card.art}')`
-			: "background-color: white;"}
-	></div>
+<div
+	class="card"
+	on:click
+	style={card.art
+		? `background: no-repeat center/100% url('/art/${card.art}')`
+		: "background-color: white;"}
+>
 	<div
 		class="cardFrame"
 		style="background: no-repeat center/cover url('/frames/{getClassFrame(
@@ -131,6 +131,7 @@
 
 <style>
 	.card {
+		--iconValueOffset: 7.1mm;
 		width: 63.5mm;
 		height: 88.9mm;
 		background-repeat: no-repeat;
@@ -138,17 +139,16 @@
 		overflow: hidden;
 		position: relative;
 		font-size: 16px;
+		break-inside: avoid;
+		position: relative;
 	}
-	.cardArt,
 	.cardFrame {
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-	}
-	.cardArt {
-		z-index: -2;
+		z-index: 1;
 	}
 	.cardTitle {
 		color: white;
@@ -157,30 +157,41 @@
 		top: 3.7mm;
 		left: 4.2mm;
 		font-size: 12px;
+		z-index: 1;
 		text-transform: uppercase;
 		text-shadow:
 			-0.2mm 0 0.5mm #ff0000,
 			0.2mm 0 0.5mm #0000ff;
+		display: flex;
+		align-items: center;
 		.cardVersion {
+			margin-left: 4px;
 			text-transform: lowercase;
-			font-style: italic;
+			padding: 0 2px;
+			border-radius: 2px;
 			&.v1 {
-				color: #ffaaaa;
+				background-color: rgba(0, 0, 255, 0.5);
+				box-shadow: 0 0 0 1px rgba(0, 0, 255, 0.8);
 			}
 			&.v2 {
-				color: #aaffaa;
+				background-color: rgba(0, 200, 0, 0.4);
+				box-shadow: 0 0 3px 1px rgba(0, 255, 0, 0.7);
 			}
 			&.v3 {
-				color: #aaaaff;
+				/* background-color: #0066ff; */
+				background-color: rgba(255, 0, 0, 0.6);
+				box-shadow: 0 0 3px 2px rgba(255, 0, 0, 1);
 			}
 		}
 	}
 	.classIcon img {
 		height: 16px;
 		position: absolute;
-		left: 56.4mm;
-		top: 6.7mm;
+		/* left: 56.4mm; */
+		left: calc(63.5mm - var(--iconValueOffset));
+		top: 6.6mm;
 		transform: translate(-50%, -50%);
+		z-index: 1;
 	}
 	.body {
 		font-size: 12px;
@@ -192,11 +203,11 @@
 		padding-bottom: 15mm;
 		padding-left: 6.3mm;
 		padding-right: 6.3mm;
+		padding-top: 0.3mm;
 		text-align: center;
 		font-family: "Share Tech", sans-serif;
 		--black-opacity: 0.75;
 		background-color: rgba(0, 0, 0, var(--black-opacity));
-		z-index: -1;
 		&::before {
 			content: "";
 			position: absolute;
@@ -210,7 +221,6 @@
 				transparent 0%,
 				rgba(0, 0, 0, var(--black-opacity)) 90%
 			);
-			z-index: -1;
 		}
 		.line + .line:not(.flavor) {
 			margin-top: 0.5rem;
@@ -334,9 +344,10 @@
 		font-family: "Brandon Grotesque", sans-serif;
 		position: absolute;
 		font-weight: bold;
-		left: 7.1mm;
-		bottom: 4.7mm;
+		left: var(--iconValueOffset);
+		bottom: 4.8mm;
 		transform: translate(-50%, -50%);
+		z-index: 1;
 	}
 	.cardType {
 		color: white;
@@ -349,6 +360,7 @@
 		text-shadow:
 			-0.2mm 0 0.5mm #ff0000,
 			0.2mm 0 0.5mm #0000ff;
+		z-index: 1;
 	}
 	.cardInfo {
 		position: absolute;
@@ -360,6 +372,7 @@
 		color: white;
 		display: flex;
 		align-items: center;
+		z-index: 1;
 		.rarity {
 			width: 10px;
 			height: 10px;
