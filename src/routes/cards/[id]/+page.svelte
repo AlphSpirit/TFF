@@ -4,7 +4,7 @@
 	import { applyPrinting } from "$lib/Utilities";
 
 	let props = $props();
-	let card = $state(props.data.card);
+	let card = props.data.card;
 	let shownCard: ICard = $state(applyPrinting(card, card.printings[0]));
 	let rightMode = $state("base");
 

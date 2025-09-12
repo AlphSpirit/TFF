@@ -2,7 +2,8 @@
 	import { page } from "$app/state";
 
 	function isLinkActive(link: string): boolean {
-		return page.url.pathname === link;
+		// return page.url.pathname === link;
+		return false;
 	}
 </script>
 
